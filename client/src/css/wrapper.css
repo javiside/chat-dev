@@ -1,0 +1,9 @@
+/* Wrapper*/
+.wrapper{
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;  /* LEFT-RIGT*/
+    justify-content: center; /* TOP-BOTTOM*/
+    height: 75%;
+}

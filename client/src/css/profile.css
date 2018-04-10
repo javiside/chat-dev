@@ -1,0 +1,106 @@
+.main-profile{
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    border:none;
+    box-sizing: border-box;
+    padding-top: 10%;
+    z-index: 2;
+}
+.main-profile::before{
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: block;
+    position: absolute;
+    background: url('../images/chat-r.jpg');
+    filter: invert(100%);
+    z-index: -2;
+}
+.menu-fs-profile{
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    border: none;
+    display: flex;
+    flex-flow: column;
+    align-content: flex-end;    
+    justify-content: flex-end;
+    height: 100%;
+    min-width: 10%;
+    margin: 0;
+    padding: 0;
+}
+.menu-avatar-profile{
+    position: relative;
+    border-radius: 50%;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    max-width: 80%;
+    max-height: 80%;
+}
+.profile-input{
+    width: 50%;
+    background-color: #eee;
+    text-align: center;
+    border: none;
+}
+.menu-fs-profile .strong-profile{
+    display: block;
+    margin-top: 1%;
+    width: 100%;
+}
+.save-profile{
+    display: block;
+    border: none;
+    color: white;
+    padding: 5% 10%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10% 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 2px 5px black;
+    width: 50%;
+    background-color: #3b5998;
+    color: white;
+    visibility: visible; /*Fallback*/
+    opacity: 1; 
+    transition:opacity .5s linear;
+}
+  .save-profile:hover {
+    color: black;
+    box-shadow: 0 2px 5px black;
+  }
+  .save-profile:active {
+    box-shadow: inset 0 0 10px white;
+  }
+  .save-profile:disabled{
+      visibility: hidden; /*Fallback*/
+      opacity: 0;
+  }
+  .profile-data{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 10%;
+}
+.profile-text{
+    flex-grow: 1;
+    margin-left: -10px;
+    z-index: 1;
+}
+.input-profile{
+    width: 80%;
+}

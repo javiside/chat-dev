@@ -1,0 +1,68 @@
+/* LEFT */
+
+.main-top{
+    position: relative;
+    background-color: #ccc;
+    height: 10%;
+    min-height: 80px;
+    max-height: 200px;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    z-index: 5;
+}
+.menu-bottom{
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+.inner-menu{
+    position: relative;
+    background-color: #ccc;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.inner-menu form{
+    display: flex;
+}
+.inner-menu form input[type="email"]{
+    display: inline-block;
+    width: 100%;
+}
+.back{
+    flex: 1 1 10%;
+    padding-left: 10px;
+    z-index: 2;
+}
+.menu-avatar{
+    height: 50%;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.user-email{
+    pointer-events: none;
+}
+
+.menu-options{
+    height: 50%;
+    width: 20%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
+.load-cont{
+    background-color: rgba(255, 255, 255, 0.544);
+    border: 2px solid gray;
+}

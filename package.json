@@ -1,0 +1,18 @@
+{
+  "name": "chat-dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "startf": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://javisideTM@bitbucket.org/javisideTM/chat-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/javisideTM/chat-dev#readme"
+}

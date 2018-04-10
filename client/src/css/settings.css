@@ -1,0 +1,128 @@
+.settings{
+  position: relative;
+  display: inline-block;
+  outline:0;
+}
+.noti-badge{
+  display: flex;
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.575);
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: .6rem;
+  margin-top: -5px;
+  margin-left: 5px; 
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 1px 1px 5px rgb(0, 0, 0);
+}
+.settings-contact{
+  position: static;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+}
+.settings{
+  position: static;
+  cursor: pointer;
+  flex: 1 1 33%;
+  z-index: 4;
+}
+.settings:hover {
+  text-shadow: 0 0 5px black;
+  filter: invert(10%);
+}
+.friends{
+  position: relative;
+  cursor: pointer;
+  flex: 2 2 67%;
+  outline: 0;
+}
+.settings-list{
+  position: absolute;
+  /* display: inline-block; */
+  z-index: 2;
+  border: 1px solid gray;
+  margin-top: 0;
+  margin-right: 0;
+  padding: 0;
+  text-align: center;
+  list-style-type: none;
+  font-size: 1rem;
+  width: 12rem;
+  right: 0;
+  background-color: #ddd;
+  visibility: hidden;
+  transition: display 0.5s;
+  outline:0;
+  width: 80%;
+  max-width: 200px;
+}
+.settings-list li{
+  text-decoration: none;
+  color: black;
+}
+.settings-list li:hover{
+  background-color: #ccc;
+}
+.settings-list li:hover{
+  color: blue;
+  text-shadow: 0 0 1px white;
+  cursor: pointer;
+}
+.settings-list .flags-li .flag-icon {
+  position: relative;
+  box-sizing: border-box;
+  height: 10%;
+  width: 10%;
+  cursor: pointer;
+  margin: 1% 3%;
+}
+.active{
+  filter: blur(1px);
+  border-radius: 50%;
+  outline:0;
+}
+.active~ .settings-list{
+  visibility: visible;
+}
+.close-add{
+  cursor: pointer;
+}
+.conv-menu-text{
+  flex: 9 9 90%;
+  text-align: center;
+}
+.tooltip{
+  position: relative;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 20%;
+  background-color: rgba(0, 0, 0, 0.462);
+  color: #fff;
+  text-align: center;
+  padding: 5% 15%;
+  border-radius: 6px;
+  font-size: .8rem;
+  left: -100%;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+.tooltip .tooltiptext.t-sett {
+  left: -400%;
+  top: 10%;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  display: table;
+}

@@ -1,0 +1,299 @@
+.App {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+#root{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.App-logo {
+  animation: beat 3s infinite alternate;
+  transform-origin: center;
+  max-height: 45%;
+  max-width: 60%;
+  width: 100%;
+  position: relative;
+}
+.App-header {
+  position: relative;
+  background-color: #911;
+  height: 15%;
+  padding: 20px;
+  color: #fee;
+  opacity: .9;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  height: 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1%;
+}
+.footer-cont {
+  position: relative;
+}
+.footer span {
+  position: relative;
+  color: white;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.flags-span {
+  position: relative;
+  height: 90%;
+  width: 10%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-items: flex-end;
+}
+.flag-icon {
+  position: relative;
+  box-sizing: border-box;
+  height: 15%;
+  width: 15%;
+  cursor: pointer;
+  margin: 1% 3%;
+}
+.flag-icon:hover{
+  border: 1px solid black;
+  box-shadow: 1px 1px 2px black;
+}
+.linkedin-logo {
+  position: relative;
+  display: block;
+  max-width: 80%;
+}
+@keyframes beat {
+  to {
+    transform: scale(1.4);
+  }
+}
+
+/* MEDIA QUERIES*/
+/* PORTRAIT */
+@media screen and (max-width: 321px) and (orientation: portrait) {
+  .App {
+    font-size: .5rem;
+ }
+ .wrapper{
+   height: 81%;
+  }
+  .footer span{
+    font-size: 1rem;
+    line-height: 3rem;
+  }
+  .button{
+    width: 80%;
+  }
+}
+@media screen and (min-width: 325px) and (orientation: portrait) {
+  .App {
+    font-size: .5rem;
+ }
+ .wrapper{
+   height: 73%;
+  }
+  .footer span{
+    font-size: 1rem;
+    line-height: 3rem;
+  }
+  .button{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 467px) and (orientation: portrait) {
+  .App {
+    font-size: 1.2rem;
+ }
+  .wrapper{
+    height: 71.5%;
+  }
+  .footer span{
+    font-size: 1.6rem;
+    line-height: 6rem;
+   }
+   .profile-img-card {
+    width: 60px;
+    height: 60px;
+  }
+   .form-control{
+    height: 20px;
+    font-size: 1.5rem;
+  }
+   .button{
+    width: 80%;
+    font-size: 1.5rem;
+  }
+  .small-text-under{
+    font-size: 1.2rem;
+  }
+} 
+@media screen and (min-width: 1020px) and (orientation: portrait) {
+  .App {
+    font-size: 1.5rem;
+ }
+  .wrapper{
+    height: 72.5%;
+  }
+  .footer span{
+    font-size: 3rem;
+    line-height: 8rem;
+   }
+   .profile-img-card {
+    width: 70px;
+    height: 70px;
+  }
+   .form-control{
+    height: 30px;
+    font-size: 1.5rem;
+  }
+   .button{
+    width: 80%;
+    font-size: 1.8rem;
+  }
+  .small-text-under{
+    font-size: 1.6rem;
+  }
+}
+
+/* LANDSCAPE */
+@media screen and (max-height: 321px) and (orientation: landscape) {
+  .App {
+    font-size: .6rem;
+ }
+ .wrapper{
+   height: 63%;
+  }
+  .footer span{
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+  .small-text-under{
+    font-size: .6rem;
+  }
+  .form-control{
+    height: 2px;
+    margin-bottom: 2px;
+    font-size: .8rem;
+  }
+  .button{
+    padding: 1px;
+    font-size: .8rem;
+  }
+  .card-container{
+    padding: 30px 30px;
+  }
+}
+@media screen and (min-height: 322px) and (orientation: landscape) {
+  .App {
+    font-size: .8rem;
+ }
+  .wrapper{
+    height: 65%;
+  }
+  .footer span{
+    font-size: .8rem;
+    line-height: 2rem;
+   }
+   .form-control{
+    height: 5px;
+  }
+  .button{
+    padding: 2px;
+  }
+  .small-text-under{
+    font-size: .8rem;
+  }
+} 
+@media screen and (min-height: 399px) and (orientation: landscape) {
+  .App {
+    font-size: .8rem;
+ }
+  .wrapper{
+    height: 66%;
+  }
+  .footer span{
+    font-size: .8rem;
+    line-height: 2rem;
+   }
+   .form-control{
+    height: 10px;
+  }
+  .button{
+    padding: 2px;
+  }
+} 
+@media screen and (min-height: 719px) and (orientation: landscape) {
+  .App {
+    font-size: 1.2rem;
+ }
+  .wrapper{
+    height: 70%;
+  }
+  .footer span{
+    font-size: 2rem;
+    line-height: 5rem;
+   }
+   .profile-img-card {
+     width: 60px;
+     height: 60px;
+   }
+   .form-control{
+    height: 20px;
+    font-size: 1.5rem;
+  }
+  .button{
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+  .small-text-under{
+    font-size: 1.2rem;
+  }
+} 
+@media screen and (min-height: 1020px) and (orientation: landscape) {
+  .App {
+    font-size: 2rem;
+ }
+  .wrapper{
+    height: 72.5%;
+  }
+  .footer span{
+    font-size: 3rem;
+    line-height: 7rem;
+   }
+   .profile-img-card {
+    width: 70px;
+    height: 70px;
+  }
+   .form-control{
+    height: 20px;
+    font-size: 2rem;
+  }
+  .button{
+    font-size: 2rem;
+    padding: 8px;
+  }   
+  .small-text-under{
+    font-size: 1.5rem;
+  }
+}
