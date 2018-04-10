@@ -11,7 +11,8 @@ export const initialState: UserStore = {
   contacts: [],
   conversations: [],
   invitations: [],
-  convParts: []
+  convParts: [],
+  avatar: ''
 };
 export const UserReducer = (state: UserStore = initialState, action: UserAction): UserStore => {
   switch (action.type) {

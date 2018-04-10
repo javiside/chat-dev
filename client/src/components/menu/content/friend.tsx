@@ -15,12 +15,13 @@ import { deleteContact, update, changeView } from '../../../store/actions/action
 interface FriendState {
   fullName: string;
   email: string;
+  avatar: string | undefined;
 }
 
 class Friend extends Component<connectedProps, FriendState> {
   constructor(props: connectedProps) {
     super(props);
-    this.state = { fullName: '', email: '' };
+    this.state = { fullName: '', email: '', avatar: '' };
     this.handleDelete = this.handleDelete.bind(this);
   }
   async handleDelete() {
@@ -33,7 +34,7 @@ class Friend extends Component<connectedProps, FriendState> {
   componentWillMount() {
     for (var friend of this.props.userData.contacts) {
       if (friend._id === this.props.viewR.friend) {
-        this.setState({ fullName: friend.name, email: friend.email });
+        this.setState({ fullName: friend.name, email: friend.email, avatar: friend.avatar });
       }
     }
   }
@@ -43,7 +44,7 @@ class Friend extends Component<connectedProps, FriendState> {
       <div className="main-profile">
         <fieldset className="menu-fs-profile">
           <div className="profile-data">
-            <img className="menu-avatar-profile" src={Avatar} alt="avatarr" />
+            <img className="menu-avatar-profile" src={this.state.avatar || Avatar} alt="avatarr" />
 
             <hr className="w-80" />
 

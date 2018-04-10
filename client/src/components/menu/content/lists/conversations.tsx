@@ -186,7 +186,7 @@ class ConvList extends Component<connectedProps, ConvListState> {
                 <span id={el._id} className="menu-avatar-conv">
                   <img
                     className="menu-avatar-inner-conv"
-                    src={Avatar}
+                    src={el.avatar || Avatar}
                     alt="avatar"
                   />
                 </span>

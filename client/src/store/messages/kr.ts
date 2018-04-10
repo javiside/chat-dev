@@ -40,6 +40,7 @@ export const KR = {
     createConv: '대화를 만들려면 클릭하십시오.',
     conversations: '대화',
     friends: '친구',
-    settings: '설정'
+    settings: '설정',
+    selectImage: '이미지 선택'
   }
 };

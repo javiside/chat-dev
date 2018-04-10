@@ -20,8 +20,8 @@ const server = http.createServer(app);
 app.set('port', process.env.PORT || 4000);
 
 // Use body-parser to get POST request for API use
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ limit: '3mb', extended: false }));
+app.use(bodyParser.json({limit: '3mb'}));
 app.use(cookieParser());
 app.use(logger('dev')); // Log requests to console
 app.use(passport.initialize()); // Initialize Passport for use
@@ -41,6 +41,8 @@ apiRoutes.get('/chat', routes.message.getMessages); // Get chat Info
 apiRoutes.post('/update-me', routes.user.updateMe); // Update info
 apiRoutes.post('/contact', routes.user.addContact); // Add new contact
 apiRoutes.post('/delete-contact', routes.user.deleteContact); // Delete contact
+apiRoutes.post('/avatar', routes.user.changeAvatar); // Change avatar
+apiRoutes.post('/conv-avatar', routes.conversation.changeAvatar); // Change conv avatar
 apiRoutes.post('/message', routes.message.saveMessage); // Add new message
 apiRoutes.post('/conversation', routes.conversation.createConv); // create new conversation
 apiRoutes.post('/add-to-conv', routes.conversation.AddToConv); // Add a contact to a conversation

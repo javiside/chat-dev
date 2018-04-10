@@ -40,6 +40,7 @@ export const KL = {
     createConv: 'click quv puS chenmoH',
     conversations: 'quv puS',
     friends: 'jup',
-    settings: 'setting'
+    settings: 'setting',
+    selectImage: 'ghItlhvam wIv'
   }
 };

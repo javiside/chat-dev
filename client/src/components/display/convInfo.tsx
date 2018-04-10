@@ -11,7 +11,7 @@ import {
   Contact,
   UserStore
 } from '../../store';
-import { addToConv, update , addContact } from '../../store/actions/actions';
+import { addToConv, update , addContact, changeConvAvatar } from '../../store/actions/actions';
 // import { addToConv } from '../../store/actions/actions';
 
 type ConvInfoState = { addCont: string };
@@ -23,6 +23,7 @@ class ConvInfo extends Component<connectedProps, ConvInfoState> {
     this.onAddChange = this.onAddChange.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleAddContact = this.handleAddContact.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
   }
   onAddChange(e: React.ChangeEvent<HTMLSelectElement>) {
     this.setState({ addCont: e.target.value });
@@ -45,9 +46,27 @@ class ConvInfo extends Component<connectedProps, ConvInfoState> {
       this.props.onReceivedData({ contacts: [answer.newContact] });
     } 
   }
+  handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    let reader = new FileReader();
+    let file = e.target.files![0];
+    reader.readAsDataURL(file);
 
+    reader.onloadend = async () => {
+      let answer = await changeConvAvatar(this.props.viewR.display, reader.result);
+      if (answer === 200) {
+        
+        // this.props.onReceivedData({
+        //   avatar: reader.result
+        // });
+        // this.props.onReceivedData({ avatar: reader.result });
+      }
+    };
+
+    // send file to server here the way you need
+  }
   render() {
     let conv = this.props.viewR.display;
+    let convImg = this.props.userData.conversations.filter(c => c._id === conv).map(cImg => cImg.avatar).toString();
     let cParts: Array<Participants> = this.props.userData.convParts;
     let myCont: Array<string> = this.props.userData.contacts.map(
       (c: Contact) => c.email
@@ -56,7 +75,9 @@ class ConvInfo extends Component<connectedProps, ConvInfoState> {
     return (
       <div className="conv-info w-30">
         <div className="info-avatar-wrap">
-          <img className="menu-avatar-info" src={Avatar} alt="avatarr" />
+          <img className="menu-avatar-info" src={convImg || Avatar} alt="avatarr" />
+          <label htmlFor="files" className="button b-blue half">{intl.selectImage}</label>
+            <input id="files" type="file" className="hidden" onChange={this.handleFileUpload}/>
         </div>
         <span className="info-text">
           <strong>{this.props.viewR.convName}</strong>

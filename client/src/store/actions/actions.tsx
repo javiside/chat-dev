@@ -99,7 +99,7 @@ export async function GetDash() {
     // Get user information
     if (answer.status === 200) {
       var user = await axios.get('/api/me');
-      if (user.status === 200) {       
+      if (user.status === 200) {   
         return user.data;
       }
     }
@@ -174,13 +174,33 @@ export async function updateMe(firstname: string, lastname: string) {
     return e.response.data.msg;
   }
 }
+export async function changeAvatar(avatar: string) {
+  try {
+    const answer = await axios.post('/api/avatar', {avatar: avatar});
+    if (answer.status === 200) {
+      return answer.status;
+    }
+  } catch (e) {
+    return e.response.data.msg;
+  }
+}
+export async function changeConvAvatar(conv: string, avatar: string) {
+  try {
+    const answer = await axios.post('/api/conv-avatar', {conv: conv, avatar: avatar});
+    if (answer.status === 200) {
+      return answer.status;
+    }
+  } catch (e) {
+    return e.response.data.msg;
+  }
+}
 export async function addContact(email: string) {
   try {
     const answer = await axios.post('/api/contact', { email: email.trim().toLowerCase() });
     if (answer.status === 200) {
       let newAnswer = {
         status: 200, 
-        newContact: {_id: answer.data._id, name: answer.data.name, email: answer.data.email}
+        newContact: {_id: answer.data._id, name: answer.data.name, email: answer.data.email, avatar: answer.data.avatar}
       };
       return newAnswer;
     }

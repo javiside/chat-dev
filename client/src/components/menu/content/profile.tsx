@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateMe, update } from '../../../store/actions/actions';
+import { updateMe, update, changeAvatar } from '../../../store/actions/actions';
 import Avatar from '../../../images/avatar.png';
 import '../../../css/profile.css';
 import { UserStore, ReceivingUserData, IntlStore } from '../../../store';
@@ -13,6 +13,7 @@ interface ProfileState {
   lastname: string;
   msg: string;
 }
+export interface AvFile extends File {}
 
 class Profile extends Component<connectedProps, ProfileState> {
   constructor(props: connectedProps) {
@@ -25,6 +26,7 @@ class Profile extends Component<connectedProps, ProfileState> {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
   }
   /* Update values if we open the profile After the data has been loaded on the global store */
   handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -63,14 +65,36 @@ class Profile extends Component<connectedProps, ProfileState> {
       this.setState({ msg: answer });
     }
   }
+  handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    let reader = new FileReader();
+    let file = e.target.files![0];
+    reader.readAsDataURL(file);
+
+    reader.onloadend = async () => {
+      let answer = await changeAvatar(reader.result);
+      if (answer === 200) {
+        this.props.onReceivedData({
+          avatar: reader.result
+        });
+        // this.props.onReceivedData({ avatar: reader.result });
+      }
+    };
+
+    // send file to server here the way you need
+  }
   render() {
     const intl = this.props.IntlR.messages;
     return (
       <div className="main-profile">
         <fieldset className="menu-fs-profile">
           <div className="profile-data">
-            <img className="menu-avatar-profile" src={Avatar} alt="avatarr" />
-
+            <img
+              className="menu-avatar-profile"
+              src={this.props.userData.avatar || Avatar}
+              alt="avatarr"
+            />
+             <label htmlFor="files" className="button b-blue">{intl.selectImage}</label>
+            <input id="files" type="file" className="hidden" onChange={this.handleFileUpload}/>
             <hr className="w-80" />
 
             <strong className="strong-profile"> {intl.fName}: </strong>

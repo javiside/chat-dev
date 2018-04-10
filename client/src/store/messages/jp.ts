@@ -40,6 +40,7 @@ export const JP = {
     createConv: 'クリックして会話を作成する',
     conversations: '会話',
     friends: '友達',
-    settings: '設定'
+    settings: '設定',
+    selectImage: '画像を選択'
   }
 };

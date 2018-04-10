@@ -11,7 +11,8 @@ export interface IConversation {
   email?: string;
   messages: Array<IMessage>;
   participants: Array<Participant>;
-  lastMessage?: String;
+  lastMessage?: string;
+  avatar: string
 }
 export interface Conversations extends Array<IConversation> {}
 export interface IConvModel extends IConversation, Document {}
@@ -54,7 +55,8 @@ const ConversationSchema = new Schema({
     default: []
   },
   lastMessage: { type: String, default: '' },
-  date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now },
+  avatar: { type: String, default: '' }
 });
 export const Conversation: Model<IConvModel> = model<IConvModel>(
   'Conversation',

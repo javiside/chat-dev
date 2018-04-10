@@ -40,6 +40,7 @@ export const CN = {
     createConv: '点击创建会话',
     conversations: '对话',
     friends: '友',
-    settings: '设置'
+    settings: '设置',
+    selectImage: '选择图像'
   }
 };

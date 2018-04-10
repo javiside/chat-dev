@@ -40,6 +40,7 @@ export const GE = {
     createConv: 'Klicken Sie auf, um Unterhaltungen zu erstellen',
     conversations: 'Gespräche',
     friends: 'Freunde',
-    settings: 'die Einstellungen'
+    settings: 'die Einstellungen',
+    selectImage: 'Bild auswählen'
   }
 };

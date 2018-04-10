@@ -31,6 +31,7 @@ export interface UserStore {
   conversations: Conversations;
   invitations: Array<Invitation>;
   convParts: Array<Participants>;
+  avatar: string;
 }
 
 export interface IUserModel extends UserStore, Document {
@@ -80,7 +81,8 @@ const UserSchema = new Schema({
       {
         _id: ObjectId,
         name: String,
-        email: String
+        email: String,
+        avatar: String
       }
     ],
     default: []
@@ -106,7 +108,8 @@ const UserSchema = new Schema({
       }
     ],
     default: []
-  }
+  },
+  avatar: { type: String, default: '' }
 });
 // Save the user's hashed password
 UserSchema.pre('save', function(this: IUserModel, next) {

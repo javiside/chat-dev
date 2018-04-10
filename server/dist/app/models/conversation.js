@@ -40,6 +40,7 @@ var ConversationSchema = new mongoose_1.Schema({
         default: []
     },
     lastMessage: { type: String, default: '' },
-    date: { type: Date, default: Date.now }
+    date: { type: Date, default: Date.now },
+    avatar: { type: String, default: '' }
 });
 exports.Conversation = mongoose_1.model('Conversation', ConversationSchema);

@@ -1,194 +1,109 @@
-.array-list{
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-    /* max-height: 90%; */
-    height: 100%;
-    width: 100%
-    /* border-right: none; */
-    
+.array-list {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  /* max-height: 90%; */
+  height: 100%;
+  width: 100%;
+  /* border-right: none; */
 }
-.array-list li{
-    margin: 0 0;
-    padding: 0 1px 0 1px;
-    position: relative;
-    list-style-type: none;
-    background-color: #eee;
-    /* height: 1000px; */
-    /* max-height: 500px; */
-    /* line-height: 50px; */
-    /* border-bottom: 2px solid #ccc; */
-    /* flex-grow: 1; */
-    /* flex-shrink: 1; */
-    /* display: flex;
+.array-list li {
+  margin: 0 0;
+  padding: 0 1px 0 1px;
+  position: relative;
+  list-style-type: none;
+  background-color: #eee;
+  /* height: 1000px; */
+  /* max-height: 500px; */
+  /* line-height: 50px; */
+  /* border-bottom: 2px solid #ccc; */
+  /* flex-grow: 1; */
+  /* flex-shrink: 1; */
+  /* display: flex;
     flex-flow: column; */
-    /* align-items: center;
+  /* align-items: center;
     justify-content: space-between; */
 }
-.array-list li:hover{
-    background-color: #ddd;
+.array-list li:hover {
+  background-color: #ddd;
 }
-.array-list .top-array{
-    margin: 10px auto;
-    padding: 10px 0;
-    background-color: darkblue;
-    border-radius: 10px;
+.array-list .top-array {
+  margin: 10px auto;
+  padding: 10px 0;
+  background-color: darkblue;
+  border-radius: 10px;
 }
-.create-chat{
-    display: flex;
-    flex-flow: column;
-    flex: 1 1 100%;
-    padding: 0;
-    margin: 1% 0;
-    border: 2px solid black;
+.create-chat {
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 100%;
+  padding: 0;
+  margin: 1% 0;
+  border: 2px solid black;
 }
-.create-chat li{
-    border: none;
+.create-chat li {
+  border: none;
 }
-.create-chat li:hover{
-    color: black;
-    cursor: pointer;
-    background-color: red;
-    text-shadow: 0 0 2px darkred;
+.create-chat li:hover {
+  color: black;
+  cursor: pointer;
+  background-color: red;
+  text-shadow: 0 0 2px darkred;
 }
-.to-add{
-    position: absolute;
-    right: 0;
-    visibility: hidden;
-    display: none;
+.to-add {
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  display: none;
 }
-.to-accept{
-    position: absolute;
-    left: 0;
-    visibility: hidden;
-    display: none;
+.to-accept {
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  display: none;
 }
-.to-delete{
-    position: absolute;
-    right: 0;
-    visibility: hidden;
-    display: none;
-    padding-right: 10%;
+.to-delete {
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  display: none;
+  padding-right: 10%;
 }
-.to-remove{
-    visibility: hidden;
+.to-remove {
+  visibility: hidden;
 }
-.to-none{
-    visibility: hidden;
-    display: none;
+.to-none {
+  visibility: hidden;
+  display: none;
 }
-.to-inv{
-    visibility: hidden;
-    display: none;
+.to-inv {
+  visibility: hidden;
+  display: none;
 }
-.array-list  li:hover .to-add{
-    visibility: visible;
-    display: inline-block;
+.array-list li:hover .to-add {
+  visibility: visible;
+  display: inline-block;
 }
 .array-list .convLiWrapper {
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    border-bottom: .5px solid #ccc;
-    padding: 0 5%;
-    z-index: 1;
-    min-height: 80px;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  border-bottom: 0.5px solid #ccc;
+  padding: 0 5%;
+  z-index: 1;
+  min-height: 80px;
 }
 .last-msg {
-    box-sizing: border-box;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-    color: gray;
-    font-weight: bold;
-    font-size: .8rem;
-    display: block;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
-}
-.array-list .convLi {
-    display: flex;
-    padding: 0 5%;
-    z-index: 1;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    justify-items: center;
-    min-height: 50px;
-    cursor: pointer;
-}
-.convLiWrapper:hover {
-    background: linear-gradient(to left, rgba(255, 255, 255, 0.66), rgb(121, 121, 211));
-    border: .5px solid blue;
-    font-weight: bold;
-    cursor: pointer;
-}
-.convLiWrapper:active {
-    background-color: rgba(0, 0, 255, 0.3);
-    cursor: pointer;
-    box-shadow: inset 0 0 10px black;
-}
-.array-list .invLi {
-    position: relative;
-    display: flex;
-    padding: 0 5%;
-    z-index: 1;
-    border-bottom: .5px solid #ccc;
-    min-height: 80px;
-}
-.array-list .invLi:hover {
-    background: linear-gradient(0.25turn, rgba(0, 0, 255, 0.5), white, rgba(255, 0, 0, 0.5));
-    text-align: center;
-
-}
-.array-list  .invLi:hover .menu-avatar-c{
-    visibility: hidden;
-    pointer-events: none;
-}
-.array-list  li:hover .to-accept,
-.array-list  li:hover .to-delete{
-    visibility: visible;
-    display: inline-block;
-
-}
-.array-list  li .to-accept:hover{
-    background-color: blue;
-    cursor: pointer;
-}
-.array-list  li .to-delete:hover{
-    background-color: red;
-    cursor: pointer;
-}
-.create-chat li:hover .to-remove{
-    visibility: visible;
-}
-.menu-avatar-c{
-    height: 50%;
-    border-radius: 50%;
-    margin-left: 10px;
-}
-.menu-avatar-conv{
-    height: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 10%;
-}
-.menu-avatar-inner-conv{
-    position: relative;
-    width: auto;
-    height: auto;
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 50%;
-}
-.long-text{
+  box-sizing: border-box;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  color: gray;
+  font-weight: bold;
+  font-size: 0.8rem;
   display: block;
   width: 100%;
   overflow: hidden;
@@ -196,119 +111,210 @@
   text-overflow: ellipsis;
   text-align: center;
 }
-.array-list .create-chat-button{
-    margin: 2% auto;
-    padding: 5px;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: white;
-    color: blue;
-    text-shadow: 1px 1px 5px black;
+.array-list .convLi {
+  display: flex;
+  padding: 0 5%;
+  z-index: 1;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  min-height: 50px;
+  cursor: pointer;
 }
-.create-ready:hover{
-    cursor: pointer;
-    background-color: rgba(0, 100, 0, 0.557);
-    color: white;
-    border-radius: 3px;
+.convLiWrapper:hover {
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0.66),
+    rgb(121, 121, 211)
+  );
+  border: 0.5px solid blue;
+  font-weight: bold;
+  cursor: pointer;
 }
-.not-create:hover{
-    cursor: not-allowed;
-    background-color: red;
-    color: black;
-    border-radius: 3px;
+.convLiWrapper:active {
+  background-color: rgba(0, 0, 255, 0.3);
+  cursor: pointer;
+  box-shadow: inset 0 0 10px black;
 }
-.array-list .create-chat-button input{
-    border-radius: 5px;
-    border: 1px solid black;
+.array-list .invLi {
+  position: relative;
+  display: flex;
+  padding: 0 5%;
+  z-index: 1;
+  border-bottom: 0.5px solid #ccc;
+  min-height: 80px;
 }
-.array-list li .menu-avatar-c{
-    display: flex;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    padding: 1% 0;
-    flex: 1 5;
+.array-list .invLi:hover {
+  background: linear-gradient(
+    0.25turn,
+    rgba(0, 0, 255, 0.5),
+    white,
+    rgba(255, 0, 0, 0.5)
+  );
+  text-align: center;
 }
-.array-list li .menu-avatar-c .menu-avatar-inner{
-    position: relative;
-    width: auto;
-    height: auto;
-    max-width: 80%;
-    max-width: 80%;
-    border-radius: 50%;
+.array-list .invLi:hover .menu-avatar-c {
+  visibility: hidden;
+  pointer-events: none;
 }
-.left-info{
-    flex: 9 3;
-    display: flex;
-    align-items: center;
-    position: relative;
-    font-size: 1rem;
-    height: 100%;
-    width: 10px;
-    z-index: 2;
-    border-bottom: 1px solid #aaa;
+.array-list li:hover .to-accept,
+.array-list li:hover .to-delete {
+  visibility: visible;
+  display: inline-block;
 }
-.left-conv-name{
-    height: 100%;
-    flex: 9 9 90%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 90%;
-    min-width: 10%;
-    padding-left: 2%;
+.array-list li .to-accept:hover {
+  background-color: blue;
+  cursor: pointer;
 }
-.left-conv-name-text{
-    height: 100%;
-    width: 90%;
-    text-align: left;
-    margin: 0 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+.array-list li .to-delete:hover {
+  background-color: red;
+  cursor: pointer;
 }
-.array-list .invLi:hover .left-conv-name-text{
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
+.create-chat li:hover .to-remove {
+  visibility: visible;
+}
+.menu-avatar-c {
+  height: 50%;
+  border-radius: 10%;
+  margin-left: 10px;
+}
+.menu-avatar-conv {
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 10%;
+}
+.menu-avatar-inner-conv,
+.menu-avatar-inner-cont {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 10%;
 }
 
-.date{
-    width: 100%;
-    height: 95%;
-    min-width: 0;
-    text-align: right;
-    flex: 2 1;
-    position: relative;
-    font-size: .8rem;
-    color: rgb(67, 62, 62);
-
+.long-text {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
 }
-.date-text{
-    height: 100%;
-    position: relative;
-    box-sizing: border-box;
-    bottom: 0;
-    display: flex;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    justify-content: flex-end;
-    padding-right: 10%;
-    align-items: center;
+.array-list .create-chat-button {
+  margin: 2% auto;
+  padding: 5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: white;
+  color: blue;
+  text-shadow: 1px 1px 5px black;
+}
+.create-ready:hover {
+  cursor: pointer;
+  background-color: rgba(0, 100, 0, 0.557);
+  color: white;
+  border-radius: 3px;
+}
+.not-create:hover {
+  cursor: not-allowed;
+  background-color: red;
+  color: black;
+  border-radius: 3px;
+}
+.array-list .create-chat-button input {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.array-list li .menu-avatar-c {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 1% 0;
+  flex: 1 5;
+}
+.array-list li .menu-avatar-c .menu-avatar-inner {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 80%;
+  max-width: 80%;
+  border-radius: 10%;
+}
+.left-info {
+  flex: 9 3;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 1rem;
+  height: 100%;
+  width: 10px;
+  z-index: 2;
+  border-bottom: 1px solid #aaa;
+}
+.left-conv-name {
+  height: 100%;
+  flex: 9 9 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 90%;
+  min-width: 10%;
+  padding-left: 2%;
+}
+.left-conv-name-text {
+  height: 100%;
+  width: 90%;
+  text-align: left;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.array-list .invLi:hover .left-conv-name-text {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
 
+.date {
+  width: 100%;
+  height: 95%;
+  min-width: 0;
+  text-align: right;
+  flex: 2 1;
+  position: relative;
+  font-size: 0.8rem;
+  color: rgb(67, 62, 62);
+}
+.date-text {
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  bottom: 0;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  justify-content: flex-end;
+  padding-right: 10%;
+  align-items: center;
 }
 .array-list li:last-child {
-    border-bottom: 4px solid rgba(0, 0, 0, 0.331);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.331);
 }
-.hidden{
-    display: none;
-    visibility: hidden;
+.hidden {
+  display: none;
+  visibility: hidden;
 }
-.createConvInput{
-    width: 80%
+.createConvInput {
+  width: 80%;
 }

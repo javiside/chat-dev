@@ -39,12 +39,11 @@
 }
 .menu-avatar-profile{
     position: relative;
-    border-radius: 50%;
-    cursor: pointer;
+    border-radius: 10%;
     width: auto;
     height: auto;
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 40%;
+    max-height: 40%;
 }
 .profile-input{
     width: 50%;

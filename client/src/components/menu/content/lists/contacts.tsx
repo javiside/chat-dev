@@ -6,11 +6,6 @@ import Avatar from '../../../../images/avatar.png';
 import { MergedStore } from '../../../../store/reducers/rootReducer';
 import { UserStore, ViewStore } from '../../../../store';
 
-// interface ContactListProps {
-//   handleClick(e: React.MouseEvent<HTMLLIElement>): void;
-
-// }
-
 class ContactList extends Component<connectedProps, {}> {
   constructor(props: connectedProps) {
     super(props);
@@ -35,8 +30,8 @@ class ContactList extends Component<connectedProps, {}> {
             >
               <span id={el._id} className="menu-avatar-c">
                 <img
-                  className="menu-avatar-inner-conv"
-                  src={Avatar}
+                  className="menu-avatar-inner-cont"
+                  src={el.avatar || Avatar}
                   alt="avatar"
                   id={el._id}
                 />

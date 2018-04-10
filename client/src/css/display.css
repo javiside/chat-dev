@@ -65,7 +65,7 @@
 }
 .chat-avatar-img{
     height: 50%;
-    border-radius: 50%;
+    border-radius: 10%;
     position: relative;
 }
 .chat-top-name{
@@ -257,7 +257,7 @@
 }
 .menu-avatar-info{
     position: relative;
-    border-radius: 50%;
+    border-radius: 10%;
     cursor: pointer;
     width: auto;
     height: auto;

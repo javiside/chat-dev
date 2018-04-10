@@ -40,6 +40,7 @@ export const ES = {
     createConv: 'Haz clic para crear conversaciones',
     conversations: 'Conversaciones',
     friends: 'Amigos',
-    settings: 'Opciones'
+    settings: 'Opciones',
+    selectImage: 'Seleccionar Imagen'
   }
 };

@@ -2,7 +2,8 @@ export interface Contact{
   _id: string,
   name: string,
   email: string,
-  lastMessage?: string
+  lastMessage?: string,
+  avatar?: string
 }
 export interface Contacts extends Array<Contact>{}
 
@@ -11,7 +12,8 @@ export interface Conversation {
   name: string,
   info?: any,
   email?: string,
-  lastMessage?: string
+  lastMessage?: string,
+  avatar?: string
 }
 export interface Conversations extends Array<Conversation>{}
 
@@ -40,13 +42,14 @@ export interface Participants {
 }
 export interface UserStore {
   _id: string;
-  firstname: string,
-  lastname: string,
-  email: string,
-  contacts: Contacts,
-  conversations: Conversations,
-  invitations: Invitations,
-  convParts: Array<Participants>
+  firstname: string;
+  lastname: string;
+  email: string;
+  contacts: Contacts;
+  conversations: Conversations;
+  invitations: Invitations;
+  convParts: Array<Participants>;
+  avatar?: string;
 }
 
 export interface ViewStore {
@@ -77,7 +80,8 @@ export interface ReceivingUserData {
   newConvParts?: Array<Participants>,
   addedToConv?: Array<Participants>,
   lastMessage?: {[conv:string] : string};
-  delCont?: Contacts
+  delCont?: Contacts;
+  avatar?: string;
 }
 
 export interface ViewRProps{

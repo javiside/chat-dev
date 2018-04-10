@@ -40,6 +40,7 @@ export const RU = {
     createConv: 'Нажмите, чтобы создать диалог',
     conversations: 'Диалоги',
     friends: 'друзья',
-    settings: 'настройки'
+    settings: 'настройки',
+    selectImage: 'Выберите изображение'
   }
 };

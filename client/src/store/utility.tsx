@@ -48,9 +48,15 @@ export const updateObject = (
                   }
                 }
               } else {
-                newData = update(newData, {
-                  [key]: { $push: updatedValues[key] }
-                });
+                if (key === 'avatar') {
+                  newData = update(newData, {
+                    avatar: { $set: updatedValues[key] }
+                  });
+                } else {
+                  newData = update(newData, {
+                    [key]: { $push: updatedValues[key] }
+                  });
+                }
               }
             }
           }

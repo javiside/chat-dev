@@ -49,7 +49,7 @@ class HomeMenu extends Component<connectedProps, HomeMenuState> {
         <img
           className="menu-avatar"
           onClick={this.props.onOpenProfile}
-          src={Avatar}
+          src={this.props.userData.avatar || Avatar}
           alt="avatar"
         />
         <span

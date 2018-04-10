@@ -90,7 +90,10 @@ footer {
 .max-w-75 {
   max-width: 75%;
 }
-
+.half {
+  height: 50%;
+  width: 50%;
+}
 /* LINE HEIGHT*/
 .lineh-30 {
   line-height: 30px;

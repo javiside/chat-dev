@@ -144,10 +144,11 @@ export const me = async (req: express.Request, res: express.Response) => {
               }));
             let updtConvs = popConv.conversations.map(c => ({
               _id: c._id._id,
-              name: c.name,
-              lastMessage: c._id.lastMessage
+              name: c._id.name,
+              lastMessage: c._id.lastMessage,
+              avatar: c._id.avatar
             }));
-
+            
             let userData = {
               _id: req.cookies.user,
               firstname: user.firstname,
@@ -156,7 +157,8 @@ export const me = async (req: express.Request, res: express.Response) => {
               contacts: user.contacts,
               conversations: updtConvs,
               invitations: user.invitations,
-              convParts: await convsParts
+              convParts: await convsParts,
+              avatar: user.avatar
             };
             await res.json(userData);
           });
@@ -219,7 +221,8 @@ export const addContact = (req: express.Request, res: express.Response) => {
                           contacts: {
                             _id: new ObjectId(contact._id),
                             name: contact.fullName,
-                            email: contact.email
+                            email: contact.email,
+                            avatar: contact.avatar
                           }
                         }
                       },
@@ -233,7 +236,8 @@ export const addContact = (req: express.Request, res: express.Response) => {
                         res.status(200).json({
                           _id: contact._id,
                           name: contact.fullName,
-                          email: contact.email
+                          email: contact.email,
+                          avatar: contact.avatar
                         });
                       }
                     );
@@ -250,6 +254,22 @@ export const addContact = (req: express.Request, res: express.Response) => {
       }
     }
   );
+};
+// Change avatar
+export const changeAvatar = (req: express.Request, res: express.Response) => {
+  if (req.body.avatar){
+  User.findByIdAndUpdate(
+    { _id: req.cookies.user },
+    { $set: { avatar: req.body.avatar } },
+    { new: true },
+    function(err: any, user: IUserModel | null) {
+      if (err) {
+        return res.status(401).json({ msg: 'err' });
+      }
+      res.status(200).end();
+    }
+  );
+}
 };
 // Remove Contact
 export const deleteContact = (req: express.Request, res: express.Response) => {

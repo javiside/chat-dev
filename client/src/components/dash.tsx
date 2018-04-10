@@ -29,7 +29,8 @@ class Dash extends Component<connectedProps, DashState> {
         contacts: user.contacts,
         conversations: user.conversations,
         invitations: user.invitations,
-        convParts: user.convParts
+        convParts: user.convParts,
+        avatar: user.avatar
       });
       const chatConvs = await GetChat();
       if (chatConvs) {

@@ -40,6 +40,7 @@ export const IN = {
     createConv: 'वार्तालाप बनाने के लिए क्लिक करें',
     conversations: 'बात चिट',
     friends: 'दोस्त',
-    settings: 'सेटिंग्स'
+    settings: 'सेटिंग्स',
+    selectImage: 'छवि चुने'
   }
 };

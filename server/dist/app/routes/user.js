@@ -186,8 +186,9 @@ exports.me = function (req, res) { return __awaiter(_this, void 0, void 0, funct
                                                 });
                                                 updtConvs = popConv.conversations.map(function (c) { return ({
                                                     _id: c._id._id,
-                                                    name: c.name,
-                                                    lastMessage: c._id.lastMessage
+                                                    name: c._id.name,
+                                                    lastMessage: c._id.lastMessage,
+                                                    avatar: c._id.avatar
                                                 }); });
                                                 _a = {
                                                     _id: req.cookies.user,
@@ -201,6 +202,7 @@ exports.me = function (req, res) { return __awaiter(_this, void 0, void 0, funct
                                                 return [4 /*yield*/, convsParts];
                                             case 1:
                                                 userData = (_a.convParts = _b.sent(),
+                                                    _a.avatar = user.avatar,
                                                     _a);
                                                 return [4 /*yield*/, res.json(userData)];
                                             case 2:
@@ -261,7 +263,8 @@ exports.addContact = function (req, res) {
                                     contacts: {
                                         _id: new ObjectId(contact._id),
                                         name: contact.fullName,
-                                        email: contact.email
+                                        email: contact.email,
+                                        avatar: contact.avatar
                                     }
                                 }
                             }, { new: true }, function (err, user) {
@@ -273,7 +276,8 @@ exports.addContact = function (req, res) {
                                 res.status(200).json({
                                     _id: contact._id,
                                     name: contact.fullName,
-                                    email: contact.email
+                                    email: contact.email,
+                                    avatar: contact.avatar
                                 });
                             });
                         });
@@ -288,6 +292,17 @@ exports.addContact = function (req, res) {
             });
         }
     });
+};
+// Change avatar
+exports.changeAvatar = function (req, res) {
+    if (req.body.avatar) {
+        user_1.User.findByIdAndUpdate({ _id: req.cookies.user }, { $set: { avatar: req.body.avatar } }, { new: true }, function (err, user) {
+            if (err) {
+                return res.status(401).json({ msg: 'err' });
+            }
+            res.status(200).end();
+        });
+    }
 };
 // Remove Contact
 exports.deleteContact = function (req, res) {

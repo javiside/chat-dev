@@ -40,7 +40,8 @@ var UserSchema = new mongoose_1.Schema({
             {
                 _id: ObjectId,
                 name: String,
-                email: String
+                email: String,
+                avatar: String
             }
         ],
         default: []
@@ -66,7 +67,8 @@ var UserSchema = new mongoose_1.Schema({
             }
         ],
         default: []
-    }
+    },
+    avatar: { type: String, default: '' }
 });
 // Save the user's hashed password
 UserSchema.pre('save', function (next) {

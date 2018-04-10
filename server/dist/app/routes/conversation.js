@@ -200,3 +200,14 @@ exports.AddToConv = function (req, res) {
         });
     });
 };
+// Change conv avatar
+exports.changeAvatar = function (req, res) {
+    if (req.body.avatar && req.body.conv) {
+        conversation_1.Conversation.findByIdAndUpdate({ _id: req.body.conv }, { $set: { avatar: req.body.avatar } }, { new: true }, function (err, user) {
+            if (err) {
+                return res.status(401).json({ msg: 'err' });
+            }
+            res.status(200).end();
+        });
+    }
+};

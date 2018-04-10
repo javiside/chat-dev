@@ -182,3 +182,19 @@ export const AddToConv = (req: express.Request, res: express.Response) => {
     );
   });
 };
+// Change conv avatar
+export const changeAvatar = (req: express.Request, res: express.Response) => {
+  if (req.body.avatar && req.body.conv){
+  Conversation.findByIdAndUpdate(
+    { _id: req.body.conv },
+    { $set: { avatar: req.body.avatar } },
+    { new: true },
+    function(err: any, user: IConvModel | null) {
+      if (err) {
+        return res.status(401).json({ msg: 'err' });
+      }
+      res.status(200).end();
+    }
+  );
+}
+};
