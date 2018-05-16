@@ -59,6 +59,7 @@ See the deployed (heroku) version here: [https://javiside.herokuapp.com](https:/
 54. Added Klingon language **2018-04-06**
 #### TODO:
 - Fix Css
-  - For Small screen devices
-  - Chat info screen
+  - Implement Sass or Bootstrap to improve readability
+  - Improve usability for Small screen devices
+  - Update/change chat info screen design
 - Implement websockets when changing images
