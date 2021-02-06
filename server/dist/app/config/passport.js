@@ -1,7 +1,7 @@
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
-}
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var passport_jwt_1 = __importDefault(require("passport-jwt"));
 var JwtStrategy = passport_jwt_1.default.Strategy;

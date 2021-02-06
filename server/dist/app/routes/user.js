@@ -14,8 +14,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
         while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
                 case 0: case 1: t = op; break;
                 case 4: _.label++; return { value: op[1], done: false };
@@ -36,7 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
-}
+};
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
@@ -174,6 +174,7 @@ exports.me = function (req, res) { return __awaiter(_this, void 0, void 0, funct
                                                     .map(function (conv) { return conv._id; })
                                                     .map(function (convPar) { return convPar.participants; })
                                                     .map(function (parArr, idx) {
+                                                    var _a;
                                                     return (_a = {},
                                                         _a[user.conversations[idx]._id] = parArr.map(function (par) { return ({
                                                             email: par._id.email,
@@ -182,7 +183,6 @@ exports.me = function (req, res) { return __awaiter(_this, void 0, void 0, funct
                                                             admin: par.admin
                                                         }); }),
                                                         _a);
-                                                    var _a;
                                                 });
                                                 updtConvs = popConv.conversations.map(function (c) { return ({
                                                     _id: c._id._id,

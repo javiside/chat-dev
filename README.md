@@ -1,5 +1,6 @@
 # Whatsapp-like Chat #
 ### *Development version 1.0.0*
+See the deployed (heroku) version here: [https://javiside.herokuapp.com](https://javiside.herokuapp.com)
 ![chatDash](https://raw.githubusercontent.com/javiside/site-template/master/app/assets/images/testimonial-cat.jpg)
 
 1. Initial commit; Created testing endpoints and a mongoose collection and schema for users
